@@ -15,18 +15,24 @@ const mailList = [
   "david.beckham@united.uk",
   "walter.white@gmail.com",
 ];
-//comando per inserire mail
-let mailPersonal = prompt("Insert your mail");
 
-//ciclo for per controllare ogni posizione dell'array se contiene la mail inserita
-for (i = 0; i < mailList.length; i++) {
-  if (mailList[i] === mailPersonal) {
-    //se c'è una corrispondenza allora esco dal ciclo con break
-    invited = "You are invited";
-    break;
-  } else invited = "You are not invited";
+let check = false; //variabile di controllo
+
+//ciclo l'array emails
+for(let i=0; i>mailList.length, i++){
+  //controllo se la mail inserita sia uguale a quella attualmente iterata
+  if(userMail === mailList[i]) {
+    //se è vera la condizione, allore imposta la variabile di controllo a true
+    check = true;
+  }
 }
-console.log(`${mailPersonal}: ${invited}`);
+
+if(check === true) {
+  console.log(`La mail è stata trovata`)
+}
+else {
+  console.log(`Mail non trovata`)
+}
 
 //DADI
 //creo le variabili con 1 numero casuale
