@@ -1,8 +1,6 @@
 // MAIL
-let invited;
-
 //creo array con mail invitati
-const mailList = [
+const emailList = [
   "simone.visconti@gmail.com",
   "mark.zuckerberg@hotmail.com",
   "silvio.berlusconi@libero.it",
@@ -16,34 +14,36 @@ const mailList = [
   "walter.white@gmail.com",
 ];
 
+const userMail = prompt(`Inserisci la tua email`);
+
 let check = false; //variabile di controllo
 
 //ciclo l'array emails
-for(let i=0; i>mailList.length, i++){
+for (let i = 0; i < emailList.length; i++) {
   //controllo se la mail inserita sia uguale a quella attualmente iterata
-  if(userMail === mailList[i]) {
+  if (userMail === emailList[i]) {
     //se è vera la condizione, allore imposta la variabile di controllo a true
     check = true;
   }
 }
 
-if(check === true) {
-  console.log(`La mail è stata trovata`)
-}
-else {
-  console.log(`Mail non trovata`)
+if (check === true) {
+  console.log(`La mail è stata trovata`);
+} else {
+  console.log(`Mail non trovata`);
 }
 
 //DADI
 //creo le variabili con 1 numero casuale
-const numPc = Math.floor(Math.random() * 6) + 1;
-const numUser = Math.floor(Math.random() * 6) + 1;
-let point;
-//confronto le variabili
-if (numPc > numUser) {
-  point = `Ha vinto il PC con il numero: ${numPc} contro il numero dello user: ${numUser}`;
-} else if (numUser > numPc) {
-  point = `Ha vinto lo user con il numero: ${numUser} contro il numero del PC: ${numPc}`;
-} else point = `Pareggio col numero: ${numUser}`;
+const pcNumber = Math.floor(Math.random() * 6) + 1;
+const userNumber = Math.floor(Math.random() * 6) + 1;
 
-console.log(point);
+//confronto le variabili
+if (pcNumber > userNumber) {
+  console.log(
+    `Numero PC: ${pcNumber} numero Utente: ${userNumber} ha vinto il pc`
+  );
+} else if (userNumber > pcNumber) {
+  console -
+    log(`Numero Utente: ${userNumber} numero PC: ${pcNumber} ha vinto!`);
+} else console.log(`Pareggio col numero: ${pcNumber}`);
